@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Список Тредов</h1>
+<ul>
+    {% for thread in threads %}
+        <li>
+            <a href="{% url 'thread_detail' thread.id %}">{{ thread.name }}</a>
+            <a href="{% url 'thread_edit' thread.id %}" class="btn btn-warning btn-sm">Редактировать</a>
+            <a href="{% url 'thread_delete' thread.id %}" class="btn btn-danger btn-sm">Удалить</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<!-- Форма создания нового треда -->
+<h2>Создать новый тред</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Создать</button>
+</form>
+{% endblock %}

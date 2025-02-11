@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ thread.name }}</h1>
+<p>{{ thread.description }}</p>
+
+<h2>Посты:</h2>
+<ul>
+    {% for post in posts %}
+        <li>
+            <strong>{{ post.title }}</strong> ({{ post.author }})
+            <p>{{ post.description }}</p>
+            <a href="{% url 'post_edit' post.id %}" class="btn btn-warning btn-sm">Редактировать</a>
+            <a href="{% url 'post_delete' post.id %}" class="btn btn-danger btn-sm">Удалить</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<!-- Форма создания нового поста -->
+<h2>Добавить пост</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ post_form.as_p }}
+    <button type="submit" class="btn btn-primary">Добавить</button>
+</form>
+{% endblock %}
