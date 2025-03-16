@@ -6,7 +6,7 @@ body {
 
 /* Навигация */
 .navbar {
-    background-color: #2d0d48 !important;
+    background-color: #2a0945 !important;
 }
 
 .navbar-brand {
@@ -38,7 +38,7 @@ h2 {
 }
 
 .table th {
-    background-color: #411183;
+    background-color: #2a0945;
     color: white;
     text-align: center;
 }
@@ -55,7 +55,7 @@ h2 {
 }
 
 .btn-primary {
-    background-color: #340f74;
+    background-color: #2a0945;
     border: none;
 }
 
@@ -75,7 +75,7 @@ h2 {
 /* Подвал */
 .footer {
     margin-top: 50px;
-    background-color: #343a40;
+    background-color: #2a2e32;
     color: white;
     text-align: center;
     padding: 15px 0;
